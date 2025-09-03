@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Total with IF</title>
+</head>
+<style>
+  span{
+    color: greenyellow;
+  }
+  h3{
+    color: greenyellow;
+  }
+</style>
+<body>
+  <div>
+    <input type="checkbox" id="br" onchange="chang()">
+    <label for="br">Breakfast ($50)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="in" onchange="chang()">
+    <label for="in">Internet ($20)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="pa" onchange="chang()">
+    <label for="pa">Parking ($30)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="gy" onchange="chang()">
+    <label for="gy">Gym Access ($40)</label>
+  </div>
+
+  <h3>Total: $<span id="total">0</span></h3>
+
+  <script>
+    let br = document.getElementById("br");
+    let internet = document.getElementById("in");
+    let pa = document.getElementById("pa");
+    let gy = document.getElementById("gy");
+    let totalBox = document.getElementById("total");
+
+    function chang() {
+      let total = 0;
+
+      if (br.checked) {
+        total += 50;
+      }
+
+      if (internet.checked) {
+        total += 20;
+      }
+
+      if (pa.checked) {
+        total += 30;
+      }
+
+      if (gy.checked) {
+        total += 40;
+      }
+
+      totalBox.innerText = total;
+    }
+  </script>
+</body>
+
+</html>
