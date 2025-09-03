@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+</head>
+<body>
+  <h2>نوع ارسال سفارش را انتخاب کنید</h2>
+
+  <div>
+    <input type="radio" name="delivery" id="adi" onchange="chang()" >
+    <label for="normal">ارسال معمولی (رایگان)</label>
+  </div>
+  <div>
+    <input type="radio" name="delivery" id="sari" onchange="chang()">
+    <label for="fast">ارسال سریع (۲۰,۰۰۰ تومان)</label>
+  </div>
+  <div>
+    <input type="radio" name="delivery" id="ali" onchange="chang()">
+    <label for="special">ارسال ویژه (۵۰,۰۰۰ تومان)</label>
+  </div>
+
+  <h3>هزینه ارسال: <span id="total"></span></h3>
+
+  <script>
+    let adi = document.getElementById("adi");
+    let sari = document.getElementById("sari");
+    let ali = document.getElementById("ali");
+    let totalBox = document.getElementById("total");
+
+    function chang() {
+      let total = "";
+
+      if (adi.checked) {
+        total = "رایگان";
+      }
+      if (sari.checked) {
+        total = "۲۰,۰۰۰ تومان";
+      }
+      if (ali.checked) {
+        total = "۵۰,۰۰۰ تومان";
+      }
+
+      totalBox.innerText = total;
+    }
+  </script>
+</body>
+</html>
