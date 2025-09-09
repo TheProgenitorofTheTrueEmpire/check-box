@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ضرب دو عدد</title>
+</head>
+
+<body>
+    <form action="#">
+
+        <input type="number" id="hello2"  onclick="chang(this.value)" placeholder="عدد اول">
+        <label for="meta">عرض</label>
+        <input type="number" id="hello3" onclick="chang(this.value)" placeholder="عدد دوم">
+        <label for="meta">طول  </label>
+       <button id="a" onclick="showResult()">ضرب</button>
+        <p id="hello"></p>
+    </form>
+
+
+    <script>
+        let x = document.getElementById("hello2");
+        let y = document.getElementById("hello3");
+        let para = document.getElementById("hello");
+        let button = document.getElementById("hello4");
+        function calculate(width, height) {
+            return  width * height;
+        }
+     
+        function showResult() {
+            para.innerHTML=calculate(x.value, y.value)
+        }
+    </script>
+</body>
+
+</html>
