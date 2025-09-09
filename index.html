@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+</head>
+<style>
+  span {
+    color: rgb(59, 94, 7);
+  }
+
+  h3 {
+    color: rgb(61, 95, 9);
+  }
+</style>
+
+<body>
+  <div>
+    <input type="checkbox" id="br" value="50" onclick="chang(this.value , this.checked)">
+    <label for="br">Breakfast ($50)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="in" value="20" onclick="chang(this.value , this.checked)">
+    <label for="in">Internet ($20)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="pa" value="30" onclick="chang(this.value , this.checked)">
+    <label for="pa">Parking ($30)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="gy" value="40" onclick="chang(this.value , this.checked)">
+    <label for="gy">Gym Access ($40)</label>
+  </div>
+
+  <h3>Total: $<span id="total">0</span></h3>
+
+  <script>
+    let br = document.getElementById("br");
+    let internet = document.getElementById("in");
+    let pa = document.getElementById("pa");
+    let gy = document.getElementById("gy");
+    let totalBox = document.getElementById("total");
+    let total = 0;
+
+
+    function chang(x, y) {
+      if (y) {
+        total += Number(x);
+        // console.log(total);
+      } else {
+        total -= Number(x);
+        // console.log(total)
+      }
+document.getElementById("total").innerHTML=(total);
+
+      //  (value.checked) {
+      //   total += 50;
+      // }
+
+      //  (value.checked) {
+      //   total += 20;
+      // }
+
+      //  (value.checked) {
+      //   total += 30;
+      // }
+
+      //  (value.checked) {
+      //   total += 40;
+      // }
+
+      // totalBox.innerText = total;
+    }
+  </script>
+</body>
+
+</html>
